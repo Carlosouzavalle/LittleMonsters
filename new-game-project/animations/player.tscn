@@ -243,3 +243,8 @@ shape = SubResource("RectangleShape2D_32p4u")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_084uf")
 animation = &"jump"
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+limit_left = 0
+limit_top = -300
+limit_bottom = 600
