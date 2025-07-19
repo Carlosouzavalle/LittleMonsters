@@ -1,7 +1,7 @@
 [gd_scene load_steps=36 format=3 uid="uid://byn25cf57n8pj"]
 
 [ext_resource type="Texture2D" uid="uid://c4oi0adn3fqfg" path="res://sprites/Pixel Adventure 1/Free/Main Characters/Virtual Guy/Idle (32x32).png" id="1_32p4u"]
-[ext_resource type="Script" uid="uid://0pv77trjc2k1" path="res://scripts/player.gd" id="1_ieeei"]
+[ext_resource type="Script" uid="uid://x1y8ryxd7f3e" path="res://animations/Player.cs" id="1_dmvhs"]
 [ext_resource type="Texture2D" uid="uid://f3yyls6abev0" path="res://sprites/Pixel Adventure 1/Free/Main Characters/Virtual Guy/Double Jump (32x32).png" id="3_dmvhs"]
 [ext_resource type="Texture2D" uid="uid://cpih4dngendr4" path="res://sprites/Pixel Adventure 1/Free/Main Characters/Virtual Guy/Run (32x32).png" id="3_oy1bc"]
 
@@ -185,7 +185,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"jump",
-"speed": 8.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -224,7 +224,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7m5qa")
 }],
-"loop": false,
+"loop": true,
 "name": &"run",
 "speed": 5.0
 }]
@@ -234,7 +234,7 @@ scale = Vector2(2, 2)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 collision_mask = 6
-script = ExtResource("1_ieeei")
+script = ExtResource("1_dmvhs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(0, 4)
@@ -243,6 +243,7 @@ shape = SubResource("RectangleShape2D_32p4u")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_084uf")
 animation = &"jump"
+autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 limit_left = 0
